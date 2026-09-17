@@ -3,7 +3,7 @@
 # Group members: Khushi Kathait, Larry Lee, Romanjeet Singh, Henry Eichstaedt
 
 
-Key to results data:
+## Key to results data:
 
 Div = League Division
 
@@ -28,7 +28,8 @@ HTAG = Half Time Away Team Goals
 HTR = Half Time Result (H=Home Win, D=Draw, A=Away Win)
 
 
-Match Statistics (where available)
+
+## Match Statistics (where available)
 
 Attendance = Crowd Attendance
 
