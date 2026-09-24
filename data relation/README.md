@@ -1,6 +1,6 @@
 # Data Relation
 
-This directory contains derived analytical datasets, statistical profiles, and the analysis notebook generated from the Premier League dataset (`combined_data.csv`).
+This directory contains derived analytical datasets, statistical profiles, and the exploratory analysis notebook generated from the Premier League dataset (`combined_data.csv`).
 
 ---
 
@@ -9,9 +9,10 @@ This directory contains derived analytical datasets, statistical profiles, and t
 | File | Description |
 | :--- | :--- |
 | `data_check.ipynb` | Jupyter Notebook containing data checks, exploratory analyses, baseline statistics, tactical profiling logic, and dataset generation code. |
+| `combine csv stats relation.xlsx` | Excel workbook containing consolidated statistical cross-references, summary sheets, and relational tables. |
 | `ref_cards.csv` | Summary of referee disciplinary statistics (yellow/red card rates and league baseline deviations). |
 | `team_home_away_profiles.csv` | Historical win/draw/loss percentages and match counts for each team split by Home and Away fixtures. |
-| `team_attack_or_defense_type.csv` | Team classifications (Attack vs. Defense) and relative scoring/conceding performance relative to league averages. |
+| `team_attack_or_defense_type.csv` | Team tactical classifications (Attack vs. Defense) and relative scoring/conceding performance relative to league averages. |
 
 ---
 
@@ -23,8 +24,8 @@ This directory contains derived analytical datasets, statistical profiles, and t
 * **`HY` / `AY`**: Home / Away Team Yellow Cards.
 * **`HR` / `AR`**: Home / Away Team Red Cards.
 * **`FTHG` / `FTAG`**: Full Time Home / Away Team Goals scored.
-* **`yellow_gap`**: Referee yellow card rate relative to the league average (`yellows_per_game - league_avg`). Positive indicates stricter than average; negative indicates more lenient.
-* **`red_gap`**: Referee red card rate relative to the league average (`reds_per_game - league_avg`). Positive indicates stricter than average; negative indicates more lenient.
+* **`yellow_gap`**: Referee yellow card rate relative to the league average (`yellows_per_game - league_yellow_avg`). Positive values indicate stricter refereeing than average; negative values indicate more lenient.
+* **`red_gap`**: Referee red card rate relative to the league average (`reds_per_game - league_red_avg`). Positive values indicate stricter refereeing than average; negative values indicate more lenient.
 
 ### 2. Result Profile Values (`team_home_away_profiles.csv`)
 * **`win_pct_home` / `win_pct_away`**: Percentage of matches won at home / away.
@@ -33,39 +34,66 @@ This directory contains derived analytical datasets, statistical profiles, and t
 
 ### 3. Tactical Archetypes & Metric Values (`team_attack_or_defense_type.csv`)
 * **Tactical Categories (`overall_type`, `home_type`, `away_type`)**:
-  * **`Strong Attack & Defense`**: Above-average offensive scoring and below-average goals conceded (elite performance on both ends).
-  * **`Attack Team`**: Above-average goal scoring performance relative to the league.
-  * **`Defense Team`**: Concedes fewer goals than the league average (strong defensive discipline).
+  * **`Strong Attack & Defense`**: Above-average offensive scoring (>= 1.0) and below-average goals conceded (<= 1.0).
+  * **`Attack Team`**: Above-average goal scoring performance relative to league average (>= 1.0).
+  * **`Defense Team`**: Concedes fewer goals than league average (< 1.0).
   * **`Weak Both`**: Below-average goal scoring and above-average goals conceded.
 * **Relative Shift Values (`home_attack%`, `home_defense%`, `away_attack%`, `away_defense%`)**:
-  * **`Attack %` (`+` / `-`)**: Percentage difference compared to league scoring baseline. (`+` = scores more than average, `-` = scores fewer than average).
-  * **`Defense %` (`+` / `-`)**: Percentage difference compared to league goal-conceding baseline. (`-` = concedes fewer than average / better defense, `+` = concedes more than average / weaker defense).
+  * **`Attack %` (`+` / `-`)**: Percentage difference compared to league scoring baseline (`(val - 1.0) * 100%`). (`+` = scores more than average, `-` = scores fewer than average).
+  * **`Defense %` (`+` / `-`)**: Percentage difference compared to league goal-conceding baseline (`(val - 1.0) * 100%`). (`-` = concedes fewer than average / better defense, `+` = concedes more than average / weaker defense).
 
 ---
 
 ## Methodology & Calculations
 
 ### 1. Referee Card Rates (`ref_cards.csv`)
-* $\text{Total Yellows} = \text{HY} + \text{AY}$
-* $\text{Total Reds} = \text{HR} + \text{AR}$
-* $\text{yellows\_per\_game} = \frac{\text{total\_yellow}}{n}$
-* $\text{reds\_per\_game} = \frac{\text{total\_red}}{n}$
-* $\text{yellow\_gap} = \text{yellows\_per\_game} - \text{league\_yellow\_avg}$
-* $\text{red\_gap} = \text{reds\_per\_game} - \text{league\_red\_avg}$
+
+* **Total Yellow Cards**:
+  `Total Yellows = HY + AY`
+
+* **Total Red Cards**:
+  `Total Reds = HR + AR`
+
+* **Yellows per Game**:
+  `yellows_per_game = total_yellow / n`
+
+* **Reds per Game**:
+  `reds_per_game = total_red / n`
+
+* **Yellow Gap (vs. League Average)**:
+  `yellow_gap = yellows_per_game - league_yellow_avg`
+
+* **Red Gap (vs. League Average)**:
+  `red_gap = reds_per_game - league_red_avg`
+
+---
 
 ### 2. Team Tactical Strength Ratios (`team_attack_or_defense_type.csv`)
 
 #### Baseline Goal Averages:
-* **League Avg Home Goals (`league_home_goals_avg`)**: $\approx 1.445$
-* **League Avg Away Goals (`league_away_goals_avg`)**: $\approx 1.312$
+* **League Avg Home Goals (`league_home_goals_avg`)**: ≈ 1.445
+* **League Avg Away Goals (`league_away_goals_avg`)**: ≈ 1.312
 
 #### Strength Formulas:
-* $\text{home\_attack\_val} = \frac{\text{Team Home Goals Scored Avg}}{\text{league\_home\_goals\_avg}}$
-* $\text{home\_defense\_val} = \frac{\text{Team Home Goals Conceded Avg}}{\text{league\_away\_goals\_avg}}$
-* $\text{away\_attack\_val} = \frac{\text{Team Away Goals Scored Avg}}{\text{league\_away\_goals\_avg}}$
-* $\text{away\_defense\_val} = \frac{\text{Team Away Goals Conceded Avg}}{\text{league\_home\_goals\_avg}}$
+* **Home Attack Ratio**:
+  `home_attack_val = Team Home Goals Scored Avg / league_home_goals_avg`
 
-#### Overall Power Index:
-* $\text{Average Attack Power} = \frac{\text{home\_attack\_val} + \text{away\_attack\_val}}{2}$
-* $\text{Average Defense Power} = 2.0 - \left(\frac{\text{home\_defense\_val} + \text{away\_defense\_val}}{2}\right)$
-* Classified as **`Attack Team`** if $\text{Attack Power} \ge \text{Defense Power}$, otherwise **`Defense Team`**.
+* **Home Defense Ratio**:
+  `home_defense_val = Team Home Goals Conceded Avg / league_away_goals_avg`
+
+* **Away Attack Ratio**:
+  `away_attack_val = Team Away Goals Scored Avg / league_away_goals_avg`
+
+* **Away Defense Ratio**:
+  `away_defense_val = Team Away Goals Conceded Avg / league_home_goals_avg`
+
+#### Overall Power Index & Classification:
+* **Average Attack Power**:
+  `Average Attack Power = (home_attack_val + away_attack_val) / 2`
+
+* **Average Defense Power**:
+  `Average Defense Power = 2.0 - ((home_defense_val + away_defense_val) / 2)`
+
+* **Overall Classification**:
+  * Classified as **`Attack Team`** if `Average Attack Power >= Average Defense Power`
+  * Otherwise classified as **`Defense Team`**
