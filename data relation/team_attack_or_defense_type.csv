@@ -1,0 +1,25 @@
+team,overall_type,home_type,away_type,home_attack%,home_defense%,away_attack%,away_defense%
+Arsenal,Defense Team,Strong Attack & Defense,Strong Attack & Defense,+9.905,-16.293,+6.129,-11.805
+Aston Villa,Attack Team,Attack Team,Defense Team,+3.121,+19.581,-2.840,-5.020
+Bournemouth,Defense Team,Weak Both,Weak Both,-20.154,+11.418,-35.495,+11.784
+Brentford,Defense Team,Defense Team,Attack Team,-19.874,-15.742,+4.319,+27.473
+Brighton,Defense Team,Defense Team,Defense Team,-21.303,-11.809,-17.788,-6.377
+Burnley,Defense Team,Weak Both,Weak Both,-34.871,+4.634,-26.756,+4.478
+Chelsea,Attack Team,Strong Attack & Defense,Strong Attack & Defense,+13.976,-19.283,+39.013,-30.801
+Crystal Palace,Defense Team,Defense Team,Weak Both,-22.659,-7.324,-14.798,+11.262
+Everton,Defense Team,Weak Both,Weak Both,-6.377,+0.149,-17.788,+15.332
+Fulham,Defense Team,Weak Both,Defense Team,-67.221,+12.344,-27.779,-8.948
+Leeds,Attack Team,Weak Both,Attack Team,-14.411,+18.362,+14.350,+34.757
+Leicester,Attack Team,Attack Team,Strong Attack & Defense,+27.544,+0.149,+34.529,-7.734
+Liverpool,Attack Team,Strong Attack & Defense,Strong Attack & Defense,+53.324,-43.199,+64.425,-38.942
+Man City,Attack Team,Strong Attack & Defense,Strong Attack & Defense,+81.818,-34.230,+71.898,-41.655
+Man United,Attack Team,Strong Attack & Defense,Strong Attack & Defense,+27.544,-7.324,+10.613,-7.734
+Newcastle,Defense Team,Weak Both,Weak Both,-13.161,+7.623,-25.262,+24.830
+Norwich,Attack Team,Weak Both,Weak Both,-35.126,+64.378,-59.501,+36.236
+Sheffield United,Defense Team,Defense Team,Weak Both,-41.613,-7.091,-49.972,+3.799
+Southampton,Attack Team,Weak Both,Weak Both,-11.805,+18.087,-14.798,+41.113
+Tottenham,Attack Team,Strong Attack & Defense,Strong Attack & Defense,+32.972,-23.767,+22.571,-7.734
+Watford,Defense Team,Weak Both,Weak Both,-35.126,+50.084,-33.296,+16.774
+West Brom,Attack Team,Weak Both,Weak Both,-45.369,+56.479,-19.755,+34.757
+West Ham,Attack Team,Attack Team,Strong Attack & Defense,+15.332,+9.118,+0.149,-5.020
+Wolves,Defense Team,Weak Both,Defense Team,-19.946,+0.149,-25.262,-18.589
