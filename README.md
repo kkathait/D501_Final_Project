@@ -256,4 +256,3 @@ Betting odds for weekend games are collected Friday afternoons, and on Tuesday a
 
 Additional match statistics (corners, shots, bookings, referee etc.) for the 2000/01 and 2001/02 seasons for the English, Scottish and German leagues were provided by Sports.com (now under new ownership and no longer available).
 
-
