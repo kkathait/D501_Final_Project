@@ -1,25 +1,29 @@
 team,overall_type,home_type,away_type,home_attack%,home_defense%,away_attack%,away_defense%
-Arsenal,Defense Team,Strong Attack & Defense,Strong Attack & Defense,+9.905,-16.293,+6.129,-11.805
-Aston Villa,Attack Team,Attack Team,Defense Team,+3.121,+19.581,-2.840,-5.020
-Bournemouth,Defense Team,Weak Both,Weak Both,-20.154,+11.418,-35.495,+11.784
-Brentford,Defense Team,Defense Team,Attack Team,-19.874,-15.742,+4.319,+27.473
-Brighton,Defense Team,Defense Team,Defense Team,-21.303,-11.809,-17.788,-6.377
-Burnley,Defense Team,Weak Both,Weak Both,-34.871,+4.634,-26.756,+4.478
-Chelsea,Attack Team,Strong Attack & Defense,Strong Attack & Defense,+13.976,-19.283,+39.013,-30.801
-Crystal Palace,Defense Team,Defense Team,Weak Both,-22.659,-7.324,-14.798,+11.262
-Everton,Defense Team,Weak Both,Weak Both,-6.377,+0.149,-17.788,+15.332
-Fulham,Defense Team,Weak Both,Defense Team,-67.221,+12.344,-27.779,-8.948
-Leeds,Attack Team,Weak Both,Attack Team,-14.411,+18.362,+14.350,+34.757
-Leicester,Attack Team,Attack Team,Strong Attack & Defense,+27.544,+0.149,+34.529,-7.734
-Liverpool,Attack Team,Strong Attack & Defense,Strong Attack & Defense,+53.324,-43.199,+64.425,-38.942
-Man City,Attack Team,Strong Attack & Defense,Strong Attack & Defense,+81.818,-34.230,+71.898,-41.655
-Man United,Attack Team,Strong Attack & Defense,Strong Attack & Defense,+27.544,-7.324,+10.613,-7.734
-Newcastle,Defense Team,Weak Both,Weak Both,-13.161,+7.623,-25.262,+24.830
-Norwich,Attack Team,Weak Both,Weak Both,-35.126,+64.378,-59.501,+36.236
-Sheffield United,Defense Team,Defense Team,Weak Both,-41.613,-7.091,-49.972,+3.799
-Southampton,Attack Team,Weak Both,Weak Both,-11.805,+18.087,-14.798,+41.113
-Tottenham,Attack Team,Strong Attack & Defense,Strong Attack & Defense,+32.972,-23.767,+22.571,-7.734
-Watford,Defense Team,Weak Both,Weak Both,-35.126,+50.084,-33.296,+16.774
-West Brom,Attack Team,Weak Both,Weak Both,-45.369,+56.479,-19.755,+34.757
-West Ham,Attack Team,Attack Team,Strong Attack & Defense,+15.332,+9.118,+0.149,-5.020
-Wolves,Defense Team,Weak Both,Defense Team,-19.946,+0.149,-25.262,-18.589
+Arsenal,Defense Team,Strong Attack & Defense,Strong Attack & Defense,+31.879,-25.014,+25.358,-33.576
+Aston Villa,Defense Team,Attack Team,Defense Team,+10.061,+1.317,-7.270,-4.485
+Bournemouth,Attack Team,Defense Team,Attack Team,-17.867,-2.232,+0.973,+22.861
+Brentford,Attack Team,Attack Team,Defense Team,+7.927,+3.377,-0.630,-0.218
+Brighton,Defense Team,Defense Team,Strong Attack & Defense,-8.848,-4.980,+1.889,-4.000
+Burnley,Defense Team,Weak Both,Weak Both,-36.873,+17.802,-23.068,+11.321
+Chelsea,Attack Team,Strong Attack & Defense,Strong Attack & Defense,+8.121,-17.573,+24.213,-10.788
+Crystal Palace,Defense Team,Defense Team,Defense Team,-20.970,-4.408,-15.283,-1.091
+Everton,Defense Team,Defense Team,Defense Team,-20.000,-3.263,-24.442,-1.576
+Fulham,Defense Team,Weak Both,Defense Team,-13.115,+4.980,-11.849,-4.291
+Ipswich,Attack Team,Weak Both,Weak Both,-52.485,+76.302,-11.849,+28.970
+Leeds,Attack Team,Weak Both,Weak Both,-13.455,+17.201,-0.830,+27.273
+Leicester,Attack Team,Weak Both,Attack Team,-4.291,+4.980,+12.192,+13.358
+Liverpool,Attack Team,Strong Attack & Defense,Strong Attack & Defense,+45.939,-34.173,+46.537,-18.545
+Luton,Attack Team,Weak Both,Weak Both,-4.970,+48.254,-3.835,+62.909
+Man City,Attack Team,Strong Attack & Defense,Strong Attack & Defense,+73.091,-34.173,+52.261,-39.879
+Man United,Attack Team,Strong Attack & Defense,Strong Attack & Defense,+15.879,-10.132,+5.896,-10.303
+Newcastle,Attack Team,Strong Attack & Defense,Weak Both,+12.970,-4.408,-3.263,+2.788
+Norwich,Defense Team,Weak Both,Weak Both,-47.394,+60.275,-63.938,+34.061
+Nott'm Forest,Defense Team,Defense Team,Weak Both,-15.152,-6.840,-6.840,+17.939
+Sheffield United,Defense Team,Weak Both,Weak Both,-37.778,+32.227,-47.911,+21.051
+Southampton,Attack Team,Weak Both,Weak Both,-29.406,+34.631,-20.664,+26.255
+Sunderland,Defense Team,Defense Team,Defense Team,-15.152,-19.863,-31.883,-4.970
+Tottenham,Attack Team,Strong Attack & Defense,Strong Attack & Defense,+16.848,-0.401,+21.923,-1.091
+Watford,Defense Team,Weak Both,Weak Both,-33.818,+46.251,-37.894,+15.394
+West Brom,Attack Team,Weak Both,Weak Both,-49.091,+56.268,-19.863,+25.576
+West Ham,Attack Team,Weak Both,Weak Both,-2.061,+12.765,-6.697,+6.182
+Wolves,Defense Team,Weak Both,Weak Both,-22.909,+5.896,-26.732,+1.818
