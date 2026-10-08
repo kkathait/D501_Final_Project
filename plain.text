@@ -1,0 +1,25 @@
+Div = League Division
+
+Date = Match Date (dd/mm/yy)
+
+HomeTeam = Home Team
+
+AwayTeam = Away Team
+
+FTHG = Full Time Home Team Goals
+
+FTAG = Full Time Away Team Goals
+
+FTR = Full Time Result (H=Home Win, D=Draw, A=Away Win)
+
+HTHG = Half Time Home Team Goals
+
+HTAG = Half Time Away Team Goals
+
+HTR = Half Time Result (H=Home Win, D=Draw, A=Away Win)
+
+
+
+- look at the team who has scored most goals (away, home)
+- look at the teams who has the most wins doesnt matter either home or away
+- ignore half time that doesnt matter when it comes to the end result
