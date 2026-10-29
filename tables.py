@@ -337,12 +337,15 @@ def create_fouls_table(url):
             "Yellows per Game": (home_yellows + away_yellows) / (len(home_games) + len(away_games)) if (len(home_games) + len(away_games)) > 0 else np.nan,
             "Reds": home_reds + away_reds,
             "Reds per Game": (home_reds + away_reds) / (len(home_games) + len(away_games)) if (len(home_games) + len(away_games)) > 0 else np.nan,
-            "Booking Points": (home_yellows + away_yellows) * 10 + (home_reds + away_reds) * 25
+            "Booking Points": (home_yellows + away_yellows) * 10 + (home_reds + away_reds) * 25,
+            "Booking Points per Game": ((home_yellows + away_yellows) * 10 + (home_reds + away_reds) * 25) / (len(home_games) + len(away_games)) if (len(home_games) + len(away_games)) > 0 else np.nan
         })
 
     fouls = pd.DataFrame(records)
 
     fouls["Yellows per Game"] = fouls["Yellows per Game"].round(2)
     fouls["Reds per Game"] = fouls["Reds per Game"].round(2)
+    fouls["Booking Points per Game"] = fouls["Booking Points per Game"].round(
+        2)
 
     return fouls
