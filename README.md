@@ -2,7 +2,6 @@
 
 # Group members: Khushi Kathait, Larry Lee, Romanjeet Singh, Henry Eichstaedt
 
-
 ## Notes for Football Data
 
 All data is in csv format, ready for use within standard spreadsheet applications. Please note that some abbreviations are no longer in use (in particular odds from specific bookmakers no longer used) and refer to data collected in earlier seasons. For a current list of what bookmakers are included in the dataset please visit http://www.football-data.co.uk/matches.php
@@ -256,3 +255,52 @@ Betting odds for weekend games are collected Friday afternoons, and on Tuesday a
 
 Additional match statistics (corners, shots, bookings, referee etc.) for the 2000/01 and 2001/02 seasons for the English, Scottish and German leagues were provided by Sports.com (now under new ownership and no longer available).
 
+## Match outcome model
+
+`modelpredictive.py` trains a LightGBM classifier on `combined_data.csv` and predicts
+home win (`H`), draw (`D`), or away win (`A`). Its pre-match features update
+chronologically from prior matches, using the results, shots, shots on target,
+corners, fouls, and cards explored in the table notebooks. This avoids using a
+match's final statistics to predict its own result.
+
+Install the Python dependencies and run a holdout evaluation:
+
+```bash
+brew install libomp  # macOS only; LightGBM needs the OpenMP runtime
+python -m pip install -r requirements.txt
+python modelpredictive.py
+```
+
+To print the three outcome probabilities for a fixture, pass both team names:
+
+```bash
+python modelpredictive.py --home-team Arsenal --away-team Chelsea
+```
+
+The evaluation uses the earliest 80% of matches for training and the latest 20%
+for a chronological holdout. Each run then fits a final model on all completed
+matches and saves it to `lightgbm_match_result.txt`.
+
+## XGBoost match outcome model
+
+`model.py` trains an XGBoost classifier for the same home win (`H`), draw (`D`),
+or away win (`A`) target. It reuses the pre-match team form and match-statistic
+features built from `combined_data.csv`, including results, shots, shots on
+target, corners, fouls, cards, and pre-match Elo ratings. Team names are one-hot
+encoded, and the same chronological holdout is used for evaluation.
+
+```bash
+python model.py
+python model.py --home-team Arsenal --away-team Chelsea
+```
+
+Running `python model.py` without fixture arguments starts an interactive
+session after training. Enter Team A and Team B; Team A is treated as the home
+team and Team B as the away team. The model prints which team is most likely
+to win (or whether a draw is most likely) along with all three probabilities.
+Leave Team A blank to exit. You can enter as many matchups as you like in one
+session.
+
+The trained pipeline, team histories, and team list are saved together to
+`xgboost_match_result.joblib`. Use `--data` to select another match CSV or
+`--model-path` to choose a different artifact path.
